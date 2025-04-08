@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday, Rico!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f8cdda, #1d2b64);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    img {
+      max-width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      margin-bottom: 20px;
+    }
+
+    .text {
+      opacity: 0;
+      font-size: 1.5em;
+      margin: 10px 20px;
+      max-width: 600px;
+      animation: fadeIn 2s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="rico_photo.jpg" alt="Happy Couple" />
+  <div id="text-container"></div>
+
+  <audio autoplay loop>
+    <source src="someone_ill_wait.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const texts = [
+      "today, its ur day...",
+      "Rico Akbar Ardiansyah.",
+      "Terima kasih sudah hadir dan membuat segalanya lebih indah.",
+      " i love you, now, tomorrow, and 4ever.",
+      "Happy Birthday, Baby."
+    ];
+
+    const container = document.getElementById("text-container");
+    let i = 0;
+
+    function showNextText() {
+      if (i < texts.length) {
+        const div = document.createElement("div");
+        div.className = "text";
+        div.style.animationDelay = `${i * 3}s`;
+        div.textContent = texts[i];
+        container.appendChild(div);
+        i++;
+        setTimeout(showNextText, 3000);
+      }
+    }
+
+    showNextText();
+  </script>
+</body>
+</html>
