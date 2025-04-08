@@ -1,2 +1,2 @@
 # Birthday-rico
-Birthday greeting for rico Akbar Ardiansyah
+Birthday greeting for Rico Akbar Ardiansyah
